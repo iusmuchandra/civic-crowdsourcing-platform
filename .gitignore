@@ -1,0 +1,28 @@
+# Active projects (independent repos)
+travelvisa-ai/
+jobhunt-ai/
+
+# Companion data directory
+jobs/
+
+# Parked projects
+Parked_Projects/
+
+# Personal documents
+*.docx
+*.pdf
+*.txt
+*.bat
+*.ini
+
+# Random project dirs
+Highsecure_v1/
+Highsecure_v2/
+Highsecure_v3/
+Martech/
+Martech_Demo/
+contractoriq/
+ric-jerrys-v2/
+village_ops/
+visacraft/
+wise-simulator/
