@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "సివిక్ వాయిస్",
+    "tagline": "నివేదించండి. రేట్ చేయండి. పరిష్కరించండి."
+  },
+  "nav": {
+    "home": "హోమ్",
+    "map": "మ్యాప్",
+    "report": "సమస్య నివేదించండి",
+    "dashboard": "డాష్‌బోర్డ్",
+    "signin": "సైన్ ఇన్"
+  },
+  "issue": {
+    "category_pothole": "గుంత",
+    "category_streetlight": "వీధి దీపం",
+    "category_water_tap": "నీటి కుళాయి",
+    "category_bus_stop": "బస్ స్టాప్",
+    "category_garbage": "చెత్త",
+    "category_other": "ఇతర",
+    "status_pending": "పెండింగ్",
+    "status_threshold_met": "థ్రెషోల్డ్ చేరుకుంది",
+    "status_in_progress": "పని జరుగుతోంది",
+    "status_resolved": "పరిష్కరించబడింది",
+    "ratings_needed": "అధికారులకు తెలియజేయడానికి ఇంకా {count} రేటింగ్‌లు అవసరం",
+    "threshold_reached": "థ్రెషోల్డ్ చేరుకుంది! అధికారులకు తెలియజేయబడింది.",
+    "rate_critical": "తీవ్రమైన",
+    "rate_needs_attention": "శ్రద్ధ అవసరం",
+    "rate_looks_fixed": "పరిష్కరించినట్లు కనిపిస్తోంది",
+    "citizens_flagged": "{count} / {total} మంది పౌరులు దీనిని ఫ్లాగ్ చేశారు"
+  },
+  "create": {
+    "step_photo": "ఫోటో తీయండి",
+    "step_location": "స్థానాన్ని గుర్తించండి",
+    "step_describe": "సమస్యను వివరించండి",
+    "photo_hint": "పౌర మౌలిక సదుపాయాల సమస్యను స్పష్టంగా చూపించండి.",
+    "photo_rejected": "ఫోటో తిరస్కరించబడింది",
+    "photo_validated": "ఫోటో ఆమోదించబడింది",
+    "ai_formalize": "AI ఫార్మలైజ్",
+    "submit": "సమస్య సమర్పించండి"
+  },
+  "map": {
+    "filter_all": "అన్నీ",
+    "filter_potholes": "గుంతలు",
+    "filter_streetlights": "వీధి దీపాలు",
+    "filter_water": "నీరు",
+    "filter_garbage": "చెత్త",
+    "view_details": "వివరాలు చూడండి"
+  },
+  "dashboard": {
+    "no_issues": "మీ పరిధిలో ఇంకా ఏ సమస్య కూడా థ్రెషోల్డ్ చేరుకోలేదు.",
+    "acknowledge": "ఆమోదించండి",
+    "work_started": "పని ప్రారంభమైంది",
+    "resolved": "పరిష్కరించబడింది"
+  },
+  "auth": {
+    "phone_label": "ఫోన్ నంబర్",
+    "send_otp": "OTP పంపండి",
+    "verify_otp": "OTP నిర్ధారించండి",
+    "otp_sent": "మీ ఫోన్‌కు OTP పంపబడింది"
+  },
+  "privacy": {
+    "phone_never_shown": "మీ ఫోన్ నంబర్ ఎప్పుడూ బహిరంగంగా చూపబడదు"
+  }
+}

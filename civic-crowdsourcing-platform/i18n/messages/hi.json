@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "सिविक वॉइस",
+    "tagline": "रिपोर्ट करें। रेट करें। समाधान करें।"
+  },
+  "nav": {
+    "home": "होम",
+    "map": "मानचित्र",
+    "report": "समस्या रिपोर्ट करें",
+    "dashboard": "डैशबोर्ड",
+    "signin": "साइन इन"
+  },
+  "issue": {
+    "category_pothole": "गड्ढा",
+    "category_streetlight": "स्ट्रीटलाइट",
+    "category_water_tap": "पानी का नल",
+    "category_bus_stop": "बस स्टॉप",
+    "category_garbage": "कचरा",
+    "category_other": "अन्य",
+    "status_pending": "लंबित",
+    "status_threshold_met": "सीमा पूरी हुई",
+    "status_in_progress": "कार्य प्रगति पर",
+    "status_resolved": "हल हो गया",
+    "ratings_needed": "अधिकारियों को सूचित करने के लिए {count} और रेटिंग की आवश्यकता है",
+    "threshold_reached": "सीमा पूरी हो गई! अधिकारियों को सूचित कर दिया गया है।",
+    "rate_critical": "गंभीर",
+    "rate_needs_attention": "ध्यान आवश्यक",
+    "rate_looks_fixed": "ठीक लग रहा है",
+    "citizens_flagged": "{count} / {total} नागरिकों ने इसे फ्लैग किया"
+  },
+  "create": {
+    "step_photo": "फोटो लें",
+    "step_location": "स्थान चिह्नित करें",
+    "step_describe": "समस्या का विवरण दें",
+    "photo_hint": "नागरिक बुनियादी ढांचे की समस्या को स्पष्ट रूप से दिखाएं।",
+    "photo_rejected": "फोटो अस्वीकृत",
+    "photo_validated": "फोटो मान्य",
+    "ai_formalize": "AI औपचारिक करें",
+    "submit": "समस्या सबमिट करें"
+  },
+  "map": {
+    "filter_all": "सभी",
+    "filter_potholes": "गड्ढे",
+    "filter_streetlights": "स्ट्रीटलाइट",
+    "filter_water": "पानी",
+    "filter_garbage": "कचरा",
+    "view_details": "विवरण देखें"
+  },
+  "dashboard": {
+    "no_issues": "आपके क्षेत्र में अभी तक कोई समस्या सीमा तक नहीं पहुंची है।",
+    "acknowledge": "स्वीकार करें",
+    "work_started": "काम शुरू हुआ",
+    "resolved": "हल हो गया"
+  },
+  "auth": {
+    "phone_label": "फोन नंबर",
+    "send_otp": "OTP भेजें",
+    "verify_otp": "OTP सत्यापित करें",
+    "otp_sent": "आपके फोन पर OTP भेजा गया"
+  },
+  "privacy": {
+    "phone_never_shown": "आपका फोन नंबर कभी सार्वजनिक रूप से नहीं दिखाया जाता"
+  }
+}

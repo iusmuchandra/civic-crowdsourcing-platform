@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "Civic Voice",
+    "tagline": "Report. Rate. Resolve."
+  },
+  "nav": {
+    "home": "Home",
+    "map": "Map",
+    "report": "Report Issue",
+    "dashboard": "Dashboard",
+    "signin": "Sign In"
+  },
+  "issue": {
+    "category_pothole": "Pothole",
+    "category_streetlight": "Streetlight",
+    "category_water_tap": "Water Tap",
+    "category_bus_stop": "Bus Stop",
+    "category_garbage": "Garbage",
+    "category_other": "Other",
+    "status_pending": "Pending",
+    "status_threshold_met": "Threshold Met",
+    "status_in_progress": "In Progress",
+    "status_resolved": "Resolved",
+    "ratings_needed": "{count} more ratings needed to notify officials",
+    "threshold_reached": "Threshold reached! Officials have been notified.",
+    "rate_critical": "Critical",
+    "rate_needs_attention": "Needs Attention",
+    "rate_looks_fixed": "Looks Fixed",
+    "citizens_flagged": "{count} / {total} citizens have flagged this"
+  },
+  "create": {
+    "step_photo": "Take a Photo",
+    "step_location": "Pin Location",
+    "step_describe": "Describe the Issue",
+    "photo_hint": "Capture the civic infrastructure issue clearly.",
+    "photo_rejected": "Photo Rejected",
+    "photo_validated": "Photo Validated",
+    "ai_formalize": "AI Formalize",
+    "submit": "Submit Issue"
+  },
+  "map": {
+    "filter_all": "All",
+    "filter_potholes": "Potholes",
+    "filter_streetlights": "Streetlights",
+    "filter_water": "Water",
+    "filter_garbage": "Garbage",
+    "view_details": "View Details"
+  },
+  "dashboard": {
+    "no_issues": "No issues in your jurisdiction have reached the threshold yet.",
+    "acknowledge": "Acknowledge",
+    "work_started": "Mark Work Started",
+    "resolved": "Mark Resolved"
+  },
+  "auth": {
+    "phone_label": "Phone Number",
+    "send_otp": "Send OTP",
+    "verify_otp": "Verify OTP",
+    "otp_sent": "OTP sent to your phone"
+  },
+  "privacy": {
+    "phone_never_shown": "Your phone number is never shown publicly"
+  }
+}

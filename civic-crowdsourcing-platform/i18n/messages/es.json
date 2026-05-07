@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "Civic Voice",
+    "tagline": "Reporta. Califica. Resuelve."
+  },
+  "nav": {
+    "home": "Inicio",
+    "map": "Mapa",
+    "report": "Reportar",
+    "dashboard": "Panel",
+    "signin": "Iniciar Sesión"
+  },
+  "issue": {
+    "category_pothole": "Bache",
+    "category_streetlight": "Farola",
+    "category_water_tap": "Grifo de Agua",
+    "category_bus_stop": "Parada de Autobús",
+    "category_garbage": "Basura",
+    "category_other": "Otro",
+    "status_pending": "Pendiente",
+    "status_threshold_met": "Umbral Alcanzado",
+    "status_in_progress": "En Progreso",
+    "status_resolved": "Resuelto",
+    "ratings_needed": "Se necesitan {count} calificaciones más para notificar a las autoridades",
+    "threshold_reached": "¡Umbral alcanzado! Las autoridades han sido notificadas.",
+    "rate_critical": "Crítico",
+    "rate_needs_attention": "Necesita Atención",
+    "rate_looks_fixed": "Parece Arreglado",
+    "citizens_flagged": "{count} / {total} ciudadanos han marcado esto"
+  },
+  "create": {
+    "step_photo": "Tomar Foto",
+    "step_location": "Marcar Ubicación",
+    "step_describe": "Describir Problema",
+    "photo_hint": "Capture claramente el problema de infraestructura cívica.",
+    "photo_rejected": "Foto Rechazada",
+    "photo_validated": "Foto Validada",
+    "ai_formalize": "Formalizar con IA",
+    "submit": "Enviar Reporte"
+  },
+  "map": {
+    "filter_all": "Todos",
+    "filter_potholes": "Baches",
+    "filter_streetlights": "Farolas",
+    "filter_water": "Agua",
+    "filter_garbage": "Basura",
+    "view_details": "Ver Detalles"
+  },
+  "dashboard": {
+    "no_issues": "Ningún problema en su jurisdicción ha alcanzado el umbral todavía.",
+    "acknowledge": "Reconocer",
+    "work_started": "Trabajo Iniciado",
+    "resolved": "Resuelto"
+  },
+  "auth": {
+    "phone_label": "Número de Teléfono",
+    "send_otp": "Enviar OTP",
+    "verify_otp": "Verificar OTP",
+    "otp_sent": "OTP enviado a su teléfono"
+  },
+  "privacy": {
+    "phone_never_shown": "Su número de teléfono nunca se muestra públicamente"
+  }
+}
