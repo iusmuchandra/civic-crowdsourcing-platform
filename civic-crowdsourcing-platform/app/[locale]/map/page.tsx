@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase';
 import type { IssueCategory, IssueStatus } from '@/lib/types';
 
@@ -34,6 +35,7 @@ interface MapIssue {
 }
 
 export default function MapViewPage() {
+  const { locale } = useParams<{ locale: string }>();
   const mapRef = useRef<HTMLDivElement>(null);
   const [issues, setIssues] = useState<MapIssue[]>([]);
   const [filteredIssues, setFilteredIssues] = useState<MapIssue[]>([]);
@@ -157,7 +159,7 @@ export default function MapViewPage() {
 
       {/* FAB — new issue */}
       <Link
-        href="/issues/new"
+        href={`/${locale}/issues/new`}
         className="absolute bottom-6 right-4 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-blue-700 active:scale-95 transition-transform"
       >
         +
@@ -182,7 +184,7 @@ export default function MapViewPage() {
             <span className="text-green-500">{selectedIssue.green_count}</span>
           </div>
           <Link
-            href={`/issues/${selectedIssue.id}`}
+            href={`/${locale}/issues/${selectedIssue.id}`}
             className="block text-center py-2 bg-blue-600 text-white rounded-lg text-sm font-medium"
           >
             View Details

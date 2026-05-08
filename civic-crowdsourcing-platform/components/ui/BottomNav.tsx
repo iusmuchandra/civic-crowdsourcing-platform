@@ -3,23 +3,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const NAV_ITEMS = [
-  { href: '/',        label: 'Home',      icon: '🏠' },
-  { href: '/map',     label: 'Map',       icon: '🗺️' },
-  { href: '/issues/new', label: 'Report', icon: '➕' },
-];
-
 export function BottomNav() {
   const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const locale = segments[0] || 'en';
 
-  // Hide on certain routes (full-screen map already has its own UI)
-  if (pathname === '/issues/new') return null;
+  const navItems = [
+    { href: `/${locale}`,          label: 'Home',   icon: '\u{1F3E0}' },
+    { href: `/${locale}/map`,      label: 'Map',    icon: '\u{1F5FA}\u{FE0F}' },
+    { href: `/${locale}/issues/new`, label: 'Report', icon: '\u{2795}' },
+  ];
+
+  const hideNav = pathname.endsWith('/issues/new');
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-bottom">
       <div className="max-w-lg mx-auto flex justify-around py-2">
-        {NAV_ITEMS.map(({ href, label, icon }) => {
-          const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+        {navItems.map(({ href, label, icon }) => {
+          const isActive = pathname === href || (href !== `/${locale}` && pathname.startsWith(href));
           return (
             <Link
               key={href}
