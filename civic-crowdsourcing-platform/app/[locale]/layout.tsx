@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Toaster } from 'sonner';
@@ -8,19 +8,26 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Civic Voice — Report. Rate. Resolve.',
   description: 'A civic crowdsourcing platform where citizens report infrastructure issues and collectively demand action from officials.',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
   themeColor: '#2563eb',
 };
 
 export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
   const messages = await getMessages();
 
   return (
-    <html lang="en">
+    <html lang={params.locale}>
       <head>
         <script
           async
@@ -28,7 +35,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="bg-gray-50 text-gray-900 antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={params.locale}>
           <main className="pb-16 min-h-screen">
             {children}
           </main>
