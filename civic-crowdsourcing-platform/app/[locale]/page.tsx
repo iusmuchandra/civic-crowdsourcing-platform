@@ -69,19 +69,25 @@ export default function HomePage() {
         }),
       ]);
 
-      const hasConfig = !countRes.error || !countRes.error?.message?.includes('URL');
-      const total = countRes.count ?? 0;
-      const active = activeRes.count ?? 0;
-      const resolved = resolvedRes.count ?? 0;
+      // Detect schema presence: if all queries failed with "does not exist", the DB is empty
+      const countErr = countRes.error;
+      const schemaMissing = countErr?.message?.includes('does not exist');
+      const hasConfig = !countErr || !countErr.message?.includes('URL');
+
+      const total = schemaMissing ? 0 : (countRes.count ?? 0);
+      const active = schemaMissing ? 0 : (activeRes.count ?? 0);
+      const resolved = schemaMissing ? 0 : (resolvedRes.count ?? 0);
 
       setStats({ total, active, resolved, hasConfig });
 
-      if (issuesRes.error) {
+      if (schemaMissing) {
+        setError('Schema not loaded. Run supabase/schema.sql and supabase/seed.sql in the Supabase SQL Editor.');
+        setIssues([]);
+      } else if (issuesRes.error) {
         if (issuesRes.error.message?.includes('URL') || issuesRes.error.message?.includes('fetch')) {
           setError('Supabase not configured.');
           setStats({ total: 0, active: 0, resolved: 0, hasConfig: false });
         } else {
-          // Schema not loaded yet — show empty state
           setIssues([]);
         }
       } else {
@@ -90,8 +96,11 @@ export default function HomePage() {
       }
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : '';
-      if (msg.includes('URL') || msg.includes('fetch') || msg.includes('not configured')) {
+      if (msg.includes('env vars missing') || msg.includes('Check NEXT_PUBLIC')) {
         setError('Supabase not configured.');
+        setStats({ total: 0, active: 0, resolved: 0, hasConfig: false });
+      } else if (msg.includes('URL') || msg.includes('fetch')) {
+        setError('Supabase connection failed. Check your network and .env.local.');
         setStats({ total: 0, active: 0, resolved: 0, hasConfig: false });
       } else {
         setIssues([]);
@@ -153,13 +162,27 @@ export default function HomePage() {
         )}
       </div>
 
-      {/* Error banner */}
-      {error && (
+      {/* Info banner — schema not loaded yet */}
+      {error && error.includes('Schema not loaded') && (
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4">
+          <p className="text-sm text-blue-700">{'ℹ'} {error}</p>
+        </div>
+      )}
+
+      {/* Error banner — Supabase not configured */}
+      {error && error.includes('not configured') && (
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-4">
           <p className="text-sm text-amber-700">{'⚠'} {error}</p>
           <p className="text-xs text-amber-500 mt-1">
             Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local
           </p>
+        </div>
+      )}
+
+      {/* Error banner — other connection issues */}
+      {error && !error.includes('Schema not loaded') && !error.includes('not configured') && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-4">
+          <p className="text-sm text-amber-700">{'⚠'} {error}</p>
         </div>
       )}
 
